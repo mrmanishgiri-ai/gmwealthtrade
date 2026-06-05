@@ -6,10 +6,14 @@
 <title>GM Wealth Trade</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
 background:#0f172a;
 color:white;
 }
@@ -34,12 +38,12 @@ flex-wrap:wrap;
 
 nav button{
 background:#22c55e;
-color:white;
 border:none;
 padding:10px 15px;
 border-radius:8px;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
+color:white;
 }
 
 .section{
@@ -49,18 +53,19 @@ padding:20px;
 .card{
 background:#1e293b;
 padding:20px;
+border-radius:12px;
 margin-bottom:20px;
-border-radius:10px;
 }
 
 h2{
 color:#22c55e;
+margin-bottom:15px;
 }
 
 .market-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:10px;
 }
 
 .market-item{
@@ -71,32 +76,25 @@ text-align:center;
 }
 
 .btn{
+display:inline-block;
+padding:12px 20px;
 background:#22c55e;
 color:white;
-padding:12px 20px;
-border:none;
-border-radius:8px;
 text-decoration:none;
-display:inline-block;
+border-radius:8px;
 margin:5px;
 font-weight:bold;
 }
 
-iframe{
-width:100%;
-height:600px;
-border:none;
-border-radius:10px;
-background:white;
+#tradingview_chart{
+height:700px;
 }
 
 footer{
-text-align:center;
-padding:20px;
 background:#111827;
-margin-top:20px;
+padding:20px;
+text-align:center;
 }
-
 </style>
 </head>
 
@@ -107,10 +105,14 @@ margin-top:20px;
 </header>
 
 <nav>
-<button onclick="changeChart('NSE:NIFTY')">NIFTY</button>
-<button onclick="changeChart('NSE:BANKNIFTY')">BANK NIFTY</button>
-<button onclick="changeChart('MCX:CRUDEOIL1!')">CRUDE OIL</button>
-<button onclick="changeChart('MCX:GOLD1!')">GOLD</button>
+<button onclick="changeSymbol('NSE:NIFTY')">NIFTY</button>
+<button onclick="changeSymbol('NSE:BANKNIFTY')">BANK NIFTY</button>
+<button onclick="changeSymbol('MCX:CRUDEOIL1!')">CRUDE</button>
+<button onclick="changeSymbol('MCX:GOLD1!')">GOLD</button>
+
+<a href="login.html">
+<button>LOGIN</button>
+</a>
 </nav>
 
 <div class="section">
@@ -145,9 +147,7 @@ margin-top:20px;
 
 <h2>📊 Live Market Chart</h2>
 
-<iframe id="tvChart"
-src="https://s.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=5&theme=dark">
-</iframe>
+<div id="tradingview_chart"></div>
 
 </div>
 
@@ -167,214 +167,21 @@ src="https://s.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=5&theme=da
 
 <p>Virtual Balance: ₹1,00,000</p>
 
-<button class="btn">
+<a class="btn" href="#">
 Start Paper Trading
-</button>
-
-</div>
-
-<div class="card">
-
-<h2>📢 Join Community</h2>
-
-<a class="btn"
-href="https://t.me/YOUR_TELEGRAM_LINK"
-target="_blank">
-Telegram
-</a>
-
-<a class="btn"
-href="https://whatsapp.com/channel/YOUR_CHANNEL_LINK"
-target="_blank">
-WhatsApp Channel
 </a>
 
 </div>
 
-</div>
-
-<footer>
-© 2026 GM Wealth Trade
-</footer>
-
-<script>
-
-function changeChart(symbol){
-
-document.getElementById("tvChart").src =
-"https://s.tradingview.com/widgetembed/?symbol="
-+ symbol +
-"&interval=5&theme=dark";
-
-}
-
-</script>
-
-</body>
-</html>background:#1e293b;
-padding:20px;
-margin-bottom:20px;
-border-radius:10px;
-}
-
-h2{
-color:#22c55e;
-}
-
-.market-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:15px;
-}
-
-.market-item{
-background:#334155;
-padding:15px;
-border-radius:8px;
-text-align:center;
-}
-
-.btn{
-background:#22c55e;
-color:white;
-padding:12px 20px;
-border:none;
-border-radius:8px;
-text-decoration:none;
-display:inline-block;
-margin:5px;
-font-weight:bold;
-}
-
-iframe{
-width:100%;
-height:550px;
-border:none;
-border-radius:10px;
-}
-
-footer{
-text-align:center;
-padding:20px;
-background:#111827;
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-GM Wealth Trade
-</header>
-
-<nav>
-<button>NIFTY</button>
-<button>BANK NIFTY</button>
-<button>GOLD</button>
-<button>CRUDE OIL</button>
-<button>PAPER TRADE</button>
-<button>LOGIN</button>
-</nav>
-
-<div class="section">
-
-<div class="card">
-<h2>📈 Equity Market</h2>
-
-<div class="market-grid">
-
-<div class="market-item">
-NIFTY 50
-</div>
-
-<div class="market-item">
-BANK NIFTY
-</div>
-
-<div class="market-item">
-RELIANCE
-</div>
-
-<div class="market-item">
-HDFC BANK
-</div>
-
-<div class="market-item">
-ICICI BANK
-</div>
-
-<div class="market-item">
-TCS
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<h2>🛢️ MCX Market</h2>
-
-<div class="market-grid">
-
-<div class="market-item">
-GOLD
-</div>
-
-<div class="market-item">
-SILVER
-</div>
-
-<div class="market-item">
-CRUDE OIL
-</div>
-
-<div class="market-item">
-NATURAL GAS
-</div>
-
-</div>
-
-</div>
-
 <div class="card">
 
-<h2>📊 Live TradingView Chart</h2>
-
-<iframe src="https://s.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=5&theme=dark"></iframe>
-
-</div>
-
-<div class="card">
-
-<h2>🎯 Today's Signals</h2>
-
-<p>🟢 NIFTY BUY</p>
-<p>🔴 CRUDE OIL SELL</p>
-<p>🟢 GOLD BUY</p>
-
-</div>
-
-<div class="card">
-
-<h2>💰 Paper Trading</h2>
-
-<p>Virtual Balance: ₹1,00,000</p>
-
-<button class="btn">
-Start Paper Trading
-</button>
-
-</div>
-
-<div class="card">
-
-<h2>📢 Join Community</h2>
+<h2>📢 Community</h2>
 
 <a class="btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">
 Telegram
 </a>
 
-<a class="btn" href="https://whatsapp.com/channel/YOUR_WHATSAPP_CHANNEL" target="_blank">
+<a class="btn" href="https://whatsapp.com/channel/YOUR_CHANNEL_LINK" target="_blank">
 WhatsApp Channel
 </a>
 
@@ -385,6 +192,40 @@ WhatsApp Channel
 <footer>
 © 2026 GM Wealth Trade
 </footer>
+
+<script src="https://s3.tradingview.com/tv.js"></script>
+
+<script>
+
+let widget;
+
+function loadChart(symbol){
+
+document.getElementById("tradingview_chart").innerHTML="";
+
+widget = new TradingView.widget({
+autosize:true,
+symbol:symbol,
+interval:"5",
+timezone:"Asia/Kolkata",
+theme:"dark",
+style:"1",
+locale:"en",
+toolbar_bg:"#111827",
+enable_publishing:false,
+allow_symbol_change:true,
+container_id:"tradingview_chart"
+});
+
+}
+
+function changeSymbol(symbol){
+loadChart(symbol);
+}
+
+loadChart("NSE:NIFTY");
+
+</script>
 
 </body>
 </html>
