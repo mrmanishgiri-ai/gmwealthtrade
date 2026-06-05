@@ -105,10 +105,11 @@ text-align:center;
 </header>
 
 <nav>
-<button onclick="changeSymbol('NSE:NIFTY')">NIFTY</button>
-<button onclick="changeSymbol('NSE:BANKNIFTY')">BANK NIFTY</button>
-<button onclick="changeSymbol('NSE:NIFTY')">NIFTY</button>
-
+<button>NIFTY</button>
+<button>BANK NIFTY</button>
+<button>RELIANCE</button>
+<button>TCS</button>
+<button>HDFC BANK</button>
 <button onclick="changeSymbol('NSE:RELIANCE')">RELIANCE</button>
 
 <button onclick="changeSymbol('NSE:TCS')">TCS</button>
@@ -117,7 +118,8 @@ text-align:center;
 <a href="login.html">
 <button>LOGIN</button>
 </a>
-<div class="section">
+</nav>
+  <div class="section">
 
 <div class="card">
 <h2>📈 Equity Market</h2>
@@ -149,10 +151,14 @@ text-align:center;
 
 <h2>📊 Live Market Chart</h2>
 
-<div id="tradingview_chart"></div>
+<iframe
+src="https://s.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=5&theme=dark"
+width="100%"
+height="650"
+frameborder="0">
+</iframe>
 
 </div>
-
 <div class="card">
 
 <h2>🎯 Today's Signals</h2>
@@ -193,40 +199,5 @@ WhatsApp Channel
 <footer>
 © 2026 GM Wealth Trade
 </footer>
-
-<script src="https://s3.tradingview.com/tv.js"></script>
-
-<script>
-
-let widget;
-
-function loadChart(symbol){
-
-document.getElementById("tradingview_chart").innerHTML="";
-
-widget = new TradingView.widget({
-autosize:true,
-symbol:symbol,
-interval:"5",
-timezone:"Asia/Kolkata",
-theme:"dark",
-style:"1",
-locale:"en",
-toolbar_bg:"#111827",
-enable_publishing:false,
-allow_symbol_change:true,
-container_id:"tradingview_chart"
-});
-
-}
-
-function changeSymbol(symbol){
-loadChart(symbol);
-}
-
-loadChart("NSE:NIFTY");
-
-</script>
-
 </body>
 </html>
