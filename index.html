@@ -26,7 +26,7 @@ color:#22c55e;
 nav{
 display:flex;
 justify-content:center;
-gap:15px;
+gap:10px;
 padding:15px;
 background:#1e293b;
 flex-wrap:wrap;
@@ -36,7 +36,7 @@ nav button{
 background:#22c55e;
 color:white;
 border:none;
-padding:10px 20px;
+padding:10px 15px;
 border-radius:8px;
 cursor:pointer;
 font-weight:bold;
@@ -48,6 +48,170 @@ padding:20px;
 
 .card{
 background:#1e293b;
+padding:20px;
+margin-bottom:20px;
+border-radius:10px;
+}
+
+h2{
+color:#22c55e;
+}
+
+.market-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:15px;
+}
+
+.market-item{
+background:#334155;
+padding:15px;
+border-radius:8px;
+text-align:center;
+}
+
+.btn{
+background:#22c55e;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:8px;
+text-decoration:none;
+display:inline-block;
+margin:5px;
+font-weight:bold;
+}
+
+iframe{
+width:100%;
+height:600px;
+border:none;
+border-radius:10px;
+background:white;
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#111827;
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+📈 GM Wealth Trade
+</header>
+
+<nav>
+<button onclick="changeChart('NSE:NIFTY')">NIFTY</button>
+<button onclick="changeChart('NSE:BANKNIFTY')">BANK NIFTY</button>
+<button onclick="changeChart('MCX:CRUDEOIL1!')">CRUDE OIL</button>
+<button onclick="changeChart('MCX:GOLD1!')">GOLD</button>
+</nav>
+
+<div class="section">
+
+<div class="card">
+<h2>📈 Equity Market</h2>
+
+<div class="market-grid">
+<div class="market-item">NIFTY 50</div>
+<div class="market-item">BANK NIFTY</div>
+<div class="market-item">RELIANCE</div>
+<div class="market-item">HDFC BANK</div>
+<div class="market-item">ICICI BANK</div>
+<div class="market-item">TCS</div>
+</div>
+
+</div>
+
+<div class="card">
+<h2>🛢️ MCX Market</h2>
+
+<div class="market-grid">
+<div class="market-item">GOLD</div>
+<div class="market-item">SILVER</div>
+<div class="market-item">CRUDE OIL</div>
+<div class="market-item">NATURAL GAS</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>📊 Live Market Chart</h2>
+
+<iframe id="tvChart"
+src="https://s.tradingview.com/widgetembed/?symbol=NSE:NIFTY&interval=5&theme=dark">
+</iframe>
+
+</div>
+
+<div class="card">
+
+<h2>🎯 Today's Signals</h2>
+
+<p>🟢 NIFTY BUY</p>
+<p>🔴 CRUDE OIL SELL</p>
+<p>🟢 GOLD BUY</p>
+
+</div>
+
+<div class="card">
+
+<h2>💰 Paper Trading</h2>
+
+<p>Virtual Balance: ₹1,00,000</p>
+
+<button class="btn">
+Start Paper Trading
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>📢 Join Community</h2>
+
+<a class="btn"
+href="https://t.me/YOUR_TELEGRAM_LINK"
+target="_blank">
+Telegram
+</a>
+
+<a class="btn"
+href="https://whatsapp.com/channel/YOUR_CHANNEL_LINK"
+target="_blank">
+WhatsApp Channel
+</a>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 GM Wealth Trade
+</footer>
+
+<script>
+
+function changeChart(symbol){
+
+document.getElementById("tvChart").src =
+"https://s.tradingview.com/widgetembed/?symbol="
++ symbol +
+"&interval=5&theme=dark";
+
+}
+
+</script>
+
+</body>
+</html>background:#1e293b;
 padding:20px;
 margin-bottom:20px;
 border-radius:10px;
